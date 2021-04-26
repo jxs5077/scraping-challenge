@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" type='text/css' href='assets/style.css'> -->
+    <!-- getting 404 error in terminal for css page -->
+    
+    <style>
+    .jumbotron {
+        text-align: center;
+        font-size: x-large;
+}
+h1 {
+    color: black;
+    font-size: 50px;
+}
+p {
+    color: black;
+    font-size: 20px;
+}
+h2 {
+    color:black;
+    font-size: 40px;
+}
+h3 {
+    color:black;
+    font-size: 20px;
+}
+img {
+    width: 25%;
+    height:25%;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Mission To Mars</h1>
+            <button>
+                <a href='/scrape'>Scrape New Data</a>
+            </button>
+        </div>
+        <h2>Mars News</h2>
+        <h3>{{mars.title}}</h3>
+        <p>{{mars.para}}</p>
+
+        <h2>Featured Image</h2>
+        <img src={{mars.image}} alt="Featured Image" style="width:25%;height:25%;">
+
+        <h2>Mars Facts</h2>
+        <table>{{mars.html_string | safe}}</table>
+
+        <h2>Mars Hemispheres</h2>
+        <h3>{{mars.hemi[0][0]}}</h3>
+        <img src={{mars.hemi[0][1]}}>
+        <h3>{{mars.hemi[1][0]}}</h3>
+        <img src={{mars.hemi[1][1]}}>
+        <h3>{{mars.hemi[2][0]}}</h3>
+        <img src={{mars.hemi[2][1]}}>
+        <h3>{{mars.hemi[3][0]}}</h3>
+        <img src={{mars.hemi[3][1]}}>
+    </div>
+
+</body>
+</html>
